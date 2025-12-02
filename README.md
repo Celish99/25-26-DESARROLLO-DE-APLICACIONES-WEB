@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Prueba</title>
+</head>
+<body>
+    <h2 >Hola, Mundo</h2>
+</body>Bienvenidos al Desarrollo Web
+</html>
