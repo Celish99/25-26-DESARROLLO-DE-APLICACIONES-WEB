@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi página web - Semana 3</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Bienvenidos a mi página web</h1>
+    <p>Este sitio demuestra el uso de <strong>HTML5</strong> y <em>etiquetas semánticas</em>.</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#seccion1">Inicio</a></li>
+      <li><a href="#seccion2">Contenido</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="seccion1">
+      <h2>Sección Principal</h2>
+      <p>Esta es una sección creada con la etiqueta <strong>section</strong>.</p>
+      <article>
+        <h3>Artículo HTML</h3>
+        <p>HTML es el lenguaje de marcado usado para crear páginas web.</p>
+      </article>
+    </section>
+
+    <section id="seccion2">
+      <h2>Multimedia</h2>
+      <h3>Imagen</h3>
+      <h3>Imagen de ejemplo:</h3>
+<img src="img/programacion.jpg" alt="Imagen de programación" width="350">
+
+      <img src="assets/img/imagen1.jpg" alt="Imagen de ejemplo" width="300">
+      <p>Visita este sitio para practicar HTML:</p>
+<a href="https://www.w3schools.com" target="_blank">Ir a W3Schools</a>
+
+      
+      
+      <h3>Video</h3>
+      <video controls width="320">
+        <source src="assets/video/video1.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </section>
+
+    <section>
+      <h2>Listas</h2>
+      <h3>Lista ordenada</h3>
+      <ol>
+        <li>Aprender HTML</li>
+        <li>Aprender CSS</li>
+        <li>Subir a GitHub</li>
+      </ol>
+      <h3>Lista desordenada</h3>
+      <ul>
+        <li>Visual Studio Code</li>
+        <li>Live Server</li>
+        <li>GitHub Pages</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Enlace externo</h2>
+      <a href="https://www.github.com" target="_blank">Visitar GitHub</a>
+    </section>
+
+    <section>
+      <h2>Tabla</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Marcelo</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>Ana</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>Carlos</td>
+            <td>25</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contacto">
+      <h2>Formulario de contacto</h2>
+      <form>
+        <label>Nombre:</label><br>
+        <input type="text" name="nombre" required><br><br>
+
+        <label>Correo:</label><br>
+        <input type="email" name="correo" required><br><br>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 - Página creada por Marcelo Caicedo</p>
+    <h3>Temas que aprenderás en este curso:</h3>
+<ul>
+    <li>HTML básico</li>
+    <li>CSS para diseño web</li>
+    <li>JavaScript para interactividad</li>
+    <li>Manejo del DOM</li>
+    <li>Uso de Live Server</li>
+</ul>
+
+  </footer>
+
+</body>
+</html>
