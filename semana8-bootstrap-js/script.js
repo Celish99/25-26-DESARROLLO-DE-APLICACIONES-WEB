@@ -1,37 +1,47 @@
+// Alerta personalizada
 function mostrarAlerta() {
-    alert("¡Hola Marcelo! Esta es una alerta creada con JavaScript 😄");
+    alert("👋 Bienvenido Marcelo, esta alerta fue creada con JavaScript");
 }
 
-document.getElementById("contactoForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+// Validación del formulario
+document.getElementById("contactoForm").addEventListener("submit", function (evento) {
+    evento.preventDefault();
 
-    let nombre = document.getElementById("nombre").value.trim();
-    let correo = document.getElementById("correo").value.trim();
-    let mensaje = document.getElementById("mensaje").value.trim();
+    const nombre = document.getElementById("nombre");
+    const correo = document.getElementById("correo");
+    const mensaje = document.getElementById("mensaje");
 
     let valido = true;
 
-    document.getElementById("errorNombre").textContent = "";
-    document.getElementById("errorCorreo").textContent = "";
-    document.getElementById("errorMensaje").textContent = "";
+    limpiarErrores();
 
-    if (nombre === "") {
-        document.getElementById("errorNombre").textContent = "El nombre es obligatorio";
+    if (nombre.value.trim() === "") {
+        mostrarError("errorNombre", "El nombre es obligatorio");
         valido = false;
     }
 
-    if (correo === "") {
-        document.getElementById("errorCorreo").textContent = "El correo es obligatorio";
+    if (correo.value.trim() === "") {
+        mostrarError("errorCorreo", "El correo es obligatorio");
         valido = false;
     }
 
-    if (mensaje === "") {
-        document.getElementById("errorMensaje").textContent = "El mensaje es obligatorio";
+    if (mensaje.value.trim() === "") {
+        mostrarError("errorMensaje", "El mensaje es obligatorio");
         valido = false;
     }
 
     if (valido) {
-        alert("Formulario enviado correctamente 👍");
-        document.getElementById("contactoForm").reset();
+        alert("✅ Formulario enviado correctamente");
+        evento.target.reset();
     }
 });
+
+function mostrarError(id, mensaje) {
+    document.getElementById(id).textContent = mensaje;
+}
+
+function limpiarErrores() {
+    document.getElementById("errorNombre").textContent = "";
+    document.getElementById("errorCorreo").textContent = "";
+    document.getElementById("errorMensaje").textContent = "";
+}
