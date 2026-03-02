@@ -12,8 +12,26 @@ def about():
 
 @app.route('/productos')
 def productos():
-    lista_productos = ["Laptop", "Mouse", "Teclado", "Monitor"]
-    return render_template('productos.html', productos=lista_productos)
+    conn = get_db_connection()
+    productos_db = conn.execute(
+        'SELECT * FROM productos ORDER BY nombre ASC'
+    ).fetchall()
+    conn.close()
+
+    inventario = Inventario()
+
+    for p in productos_db:
+        producto_obj = Producto(
+            p['id'],
+            p['nombre'],
+            p['cantidad'],
+            p['precio']
+        )
+        inventario.agregar_producto(producto_obj)
+
+    productos = inventario.mostrar_todos()
+
+    return render_template('productos.html', productos=productos)
 
 @app.route('/clientes')
 def clientes():

@@ -3,10 +3,35 @@
 {% block content %}
 <h2>Lista de Productos</h2>
 
-<ul>
+<a href="{{ url_for('agregar') }}">➕ Agregar Nuevo Producto</a>
+
+<br><br>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+    </tr>
+
     {% for producto in productos %}
-        <li>{{ producto }}</li>
+    <tr>
+        <td>{{ producto.get_id() }}</td>
+        <td>{{ producto.get_nombre() }}</td>
+        <td>{{ producto.get_cantidad() }}</td>
+        <td>${{ producto.get_precio() }}</td>
+        <td>
+            <a href="{{ url_for('editar', id=producto.get_id()) }}">✏ Editar</a> |
+            <a href="{{ url_for('eliminar', id=producto.get_id()) }}" 
+               onclick="return confirm('¿Seguro que deseas eliminar este producto?')">
+               🗑 Eliminar
+            </a>
+        </td>
+    </tr>
     {% endfor %}
-</ul>
+
+</table>
 
 {% endblock %}
