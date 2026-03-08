@@ -1,0 +1,11 @@
+@app.route("/guardar_txt", methods=["POST"])
+def guardar_txt():
+
+    nombre = request.form["nombre"]
+    precio = request.form["precio"]
+    cantidad = request.form["cantidad"]
+
+    with open("data/datos.txt", "a") as archivo:
+        archivo.write(f"{nombre},{precio},{cantidad}\n")
+
+    return "Datos guardados en TXT"

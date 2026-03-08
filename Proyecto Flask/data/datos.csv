@@ -1,0 +1,13 @@
+@app.route("/guardar_csv", methods=["POST"])
+def guardar_csv():
+
+    nombre = request.form["nombre"]
+    precio = request.form["precio"]
+    cantidad = request.form["cantidad"]
+
+    with open("data/datos.csv", "a", newline="") as archivo:
+        writer = csv.writer(archivo)
+        writer.writerow([nombre, precio, cantidad])
+
+    return "Datos guardados en CSV"
+    

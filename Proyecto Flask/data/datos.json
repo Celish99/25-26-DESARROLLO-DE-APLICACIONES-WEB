@@ -1,0 +1,18 @@
+@app.route("/guardar_json", methods=["POST"])
+def guardar_json():
+
+    nombre = request.form["nombre"]
+    precio = request.form["precio"]
+    cantidad = request.form["cantidad"]
+
+    producto = {
+        "nombre": nombre,
+        "precio": precio,
+        "cantidad": cantidad
+    }
+
+    with open("data/datos.json", "a") as archivo:
+        json.dump(producto, archivo)
+        archivo.write("\n")
+
+    return "Datos guardados en JSON"
